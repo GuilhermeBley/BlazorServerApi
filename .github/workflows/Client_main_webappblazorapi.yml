@@ -57,4 +57,4 @@ jobs:
           app-name: 'WebAppBlazorApi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_245FA09166F4466892A9485C3692D54D }}
-          package: .\web\
+          package: .
