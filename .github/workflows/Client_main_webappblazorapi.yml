@@ -29,7 +29,7 @@ jobs:
         run: dotnet build $SOLUTION --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish $SOLUTION -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish $SOLUTION -c Release -o ${{env.DOTNET_ROOT}}/myapp/web
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -57,4 +57,5 @@ jobs:
           app-name: 'WebAppBlazorApi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_245FA09166F4466892A9485C3692D54D }}
-          package: ./web
+          package: .
+          
