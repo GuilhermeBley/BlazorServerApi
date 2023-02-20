@@ -14,7 +14,7 @@ jobs:
     runs-on: windows-latest 
     
     env:
-      SOLUTION: '/src/Infrastructure/BlazorApi.Client/BlazorApi.Client.csproj'
+      SOLUTION: 'src/Infrastructure/BlazorApi.Client/BlazorApi.Client.csproj'
 
     steps:
       - uses: actions/checkout@v2
