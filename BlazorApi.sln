@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E47AC04E-4307-40EE-B9FD-9D4E0EE8C11D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E8CD5770-013B-4952-9D7A-04A6AE7D1BFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApi.Client", "src\Infrastructure\BlazorApi.Client\BlazorApi.Client.csproj", "{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApi.Server", "src\Infrastructure\BlazorApi.Server\BlazorApi.Server.csproj", "{6379522F-41B9-465C-9285-9756E171F94F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +18,20 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6379522F-41B9-465C-9285-9756E171F94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6379522F-41B9-465C-9285-9756E171F94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6379522F-41B9-465C-9285-9756E171F94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6379522F-41B9-465C-9285-9756E171F94F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E8CD5770-013B-4952-9D7A-04A6AE7D1BFE} = {E47AC04E-4307-40EE-B9FD-9D4E0EE8C11D}
+		{F3CD469A-9EA2-4CDC-9870-B2DC90E52B48} = {E8CD5770-013B-4952-9D7A-04A6AE7D1BFE}
+		{6379522F-41B9-465C-9285-9756E171F94F} = {E8CD5770-013B-4952-9D7A-04A6AE7D1BFE}
 	EndGlobalSection
 EndGlobal
