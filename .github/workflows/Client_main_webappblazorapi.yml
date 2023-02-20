@@ -14,7 +14,7 @@ jobs:
     runs-on: windows-latest 
     
     env:
-      SOLUTION: '/src/Infrastructure/BlazorApi.Server/BlazorApi.Server.csproj'
+      SOLUTION: '/src/Infrastructure/BlazorApi.Client/BlazorApi.Client.csproj'
 
     steps:
       - uses: actions/checkout@v2
@@ -57,4 +57,4 @@ jobs:
           app-name: 'WebAppBlazorApi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_245FA09166F4466892A9485C3692D54D }}
-          package: ./api/
+          package: .\web\
