@@ -3,7 +3,7 @@
 <PageTitle>Weather forecast</PageTitle>
 
 @using BlazorApi.Client.Data
-@inject WeatherForecastService ForecastService
+@inject Services.WeatherForecastService ForecastService
 
 <h1>Weather forecast</h1>
 
@@ -39,7 +39,7 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private IEnumerable<WeatherForecast> forecasts = Enumerable.Empty<WeatherForecast>();
 
     protected override async Task OnInitializedAsync()
     {
