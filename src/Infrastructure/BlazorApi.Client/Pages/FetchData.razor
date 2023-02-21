@@ -5,7 +5,7 @@
 @using BlazorApi.Client.Data
 @inject Services.WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
+<h1>Weather forecast service</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
@@ -43,6 +43,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        try
+        {
+            forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Type: {e.GetType()} \nMessage: {e.Message}");
+        }
     }
 }
