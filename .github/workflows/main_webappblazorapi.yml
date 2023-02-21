@@ -11,7 +11,11 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    
+    env:
+      SOLUTION_CLIENT: 'src/Infrastructure/BlazorApi.Client/BlazorApi.Client.csproj'
+      SOLUTION_SERVER: 'src/Infrastructure/BlazorApi.Server/BlazorApi.Server.csproj'
 
     steps:
       - uses: actions/checkout@v2
@@ -22,11 +26,18 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Build with dotnet Client
+        run: dotnet build $SOLUTION_CLIENT --configuration Release
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: dotnet publish Client
+        run: dotnet publish $SOLUTION_CLIENT -c Release -o ${{env.DOTNET_ROOT}}/myapp/web
+        
+
+      - name: Build with dotnet Server
+        run: dotnet build $SOLUTION_SERVER --configuration Release
+
+      - name: dotnet publish Server
+        run: dotnet publish $SOLUTION_SERVER -c Release -o ${{env.DOTNET_ROOT}}/myapp/api
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -55,3 +66,4 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_245FA09166F4466892A9485C3692D54D }}
           package: .
+          
