@@ -9,7 +9,7 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (forecasts == null || !forecasts.Any())
 {
     <p><em>Loading...</em></p>
 }
@@ -36,8 +36,8 @@ else
             }
         </tbody>
     </table>
-    <p>@Error</p>
 }
+<p>@Error</p>
 
 @code {
     private IEnumerable<WeatherForecast> forecasts = Enumerable.Empty<WeatherForecast>();
