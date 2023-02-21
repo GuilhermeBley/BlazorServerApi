@@ -36,10 +36,12 @@ else
             }
         </tbody>
     </table>
+    <p>@Error</p>
 }
 
 @code {
     private IEnumerable<WeatherForecast> forecasts = Enumerable.Empty<WeatherForecast>();
+    private string Error = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,7 +51,7 @@ else
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Type: {e.GetType()} \nMessage: {e.Message}");
+            Error = $"Type: {e.GetType()} \nMessage: {e.Message}";
         }
     }
 }
